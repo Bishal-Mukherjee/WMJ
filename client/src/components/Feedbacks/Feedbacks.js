@@ -23,7 +23,9 @@ const Feedbacks = () => {
 
   return (
     <div style={{ textAlign: "center" }} className="feedback_section">
-      <h1 style={{ fontFamily: "Comfortaa" }}>What people have say about us</h1>
+      <h1 style={{ fontFamily: "Comfortaa" }}>
+        What people have to say about us
+      </h1>
       {feedbacks.length === 0 && <div className="loader" />}
       <div style={{ marginLeft: "5%", marginRight: "5%" }}>
         {feedbacks.length !== 0 && (

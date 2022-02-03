@@ -22,7 +22,7 @@ const Recommendations = () => {
   return (
     <div style={{ margin: "1rem" }} id="recommendations">
       <h1 style={{ fontFamily: "Comfortaa" }}>
-        Choose our from Top collection
+        Choose from our top collection
       </h1>
 
       <div className="catalogLG">
@@ -30,7 +30,7 @@ const Recommendations = () => {
           <div className="loader" style={{ marginLeft: "48%" }} />
         )}
         {images.map((i) => (
-          <span>
+          <span style={{ marginTop: "-1.5rem" }}>
             <img
               alt="images"
               src={i.imageLink}
@@ -38,7 +38,7 @@ const Recommendations = () => {
                 width: "22rem",
                 height: "25rem",
                 marginLeft: "1rem",
-                marginTop: "1rem",
+                marginTop: "3.5rem",
               }}
               className="imageContainer"
             />
@@ -46,7 +46,7 @@ const Recommendations = () => {
               style={{
                 position: "absolute",
                 marginLeft: "-22rem",
-                marginTop: "26.5rem",
+                marginTop: "28.5rem",
               }}
             >
               <div
@@ -56,14 +56,13 @@ const Recommendations = () => {
                 }}
               >
                 <span style={{ color: "black", fontFamily: "Comfortaa" }}>
-                  &nbsp;{i.text}
+                  {i.text}
                 </span>
                 <br />
                 <b style={{ color: "black", fontFamily: "Comfortaa" }}>
-                  &nbsp;₹{"  "}
+                  ₹{"  "}
                   {i.revisedPrice}
                 </b>{" "}
-                &nbsp;
                 <s style={{ color: "#808080", fontFamily: "Comfortaa" }}>
                   {i.price}
                 </s>
