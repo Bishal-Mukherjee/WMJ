@@ -2,11 +2,11 @@ import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./Index.css";
 import { Grid } from "@mui/material";
-import Recommendations from "../components/Recommendations/Recommendations";
+import Recommendations from "../Recommendations/Recommendations";
 // require("dotenv").config();
 import axios from "axios";
-import Footer from "../components/Footer/Footer";
-import Feedbacks from "../components/Feedbacks/Feedbacks";
+import Footer from "../Footer/Footer";
+import Feedbacks from "../Feedbacks/Feedbacks";
 
 const Index = () => {
   const [images, setImages] = useState([]);
@@ -74,7 +74,7 @@ const Index = () => {
               style={{
                 backgroundColor: "red",
                 fontSize: "1.5rem",
-                color: "white",
+                color: "black",
                 width: "15rem",
               }}
             >

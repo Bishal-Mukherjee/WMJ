@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Index from "./Landing/Index";
+import Index from "./components/Landing/Index";
 
 function App() {
   return (
