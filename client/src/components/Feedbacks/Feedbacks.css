@@ -1,0 +1,44 @@
+.feedback_section {
+  margin-top: 10rem;
+}
+
+@media screen and (max-width: 600px) {
+  .feedback_section {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .loader {
+    border: 16px solid #000000;
+    border-radius: 50%;
+    border-top: 16px solid #ff0000;
+    border-bottom: 16px solid #ff0000;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin-left: 42%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .loader {
+    border: 16px solid #000000;
+    border-radius: 50%;
+    border-top: 16px solid #ff0000;
+    border-bottom: 16px solid #ff0000;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin-left: 48%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

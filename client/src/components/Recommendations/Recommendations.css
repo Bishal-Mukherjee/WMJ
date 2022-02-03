@@ -1,0 +1,48 @@
+.catalogLG {
+  display: block;
+}
+
+.catalogSM {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .catalogSM {
+    display: block;
+  }
+  .catalogLG {
+    display: none;
+  }
+}
+
+.imageContainer {
+  /* position: relative; */
+  text-align: center;
+}
+
+.imageText {
+  position: relative;
+  /* top: -5%; */
+  left: -10%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.loader {
+  border: 16px solid #000000;
+  border-radius: 50%;
+  border-top: 16px solid #ff0000;
+  border-bottom: 16px solid #ff0000;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
