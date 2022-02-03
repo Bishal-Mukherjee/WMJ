@@ -1,6 +1,6 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const GOOGLE_SHEET_ID_PRODUCTS = process.env.GOOGLE_SHEET_ID_PRODUCTS;
-const doc = new GoogleSpreadsheet(GOOGLE_SHEET_ID_PRODUCTS);
+const GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID;
+const doc = new GoogleSpreadsheet(GOOGLE_SHEET_ID);
 
 exports.getCarouselImages = async (req, res) => {
   await doc.useServiceAccountAuth({
