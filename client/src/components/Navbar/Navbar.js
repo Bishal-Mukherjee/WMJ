@@ -54,7 +54,10 @@ const Navbar = () => {
               WearMyজামা
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box
+              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+              style={{ marginLeft: "-1.5rem" }}
+            >
               <Sidebar />
             </Box>
             <Typography
@@ -66,6 +69,7 @@ const Navbar = () => {
                 color: "red",
                 fontSize: "1.8rem",
                 fontFamily: "Sofia",
+                marginLeft: "-2.5rem",
               }}
             >
               WearMyজামা

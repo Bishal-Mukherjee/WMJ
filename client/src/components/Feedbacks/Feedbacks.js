@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import "./Feedbacks.css";
 import { Button } from "@mui/material";
-import { TailSpin } from "react-loader-spinner";
 
 const Feedbacks = () => {
   const [feedbacks, setFeedbacks] = useState([]);

@@ -33,9 +33,6 @@ const Index = () => {
     }
   }, 3000);
 
-  // console.log(document.getElementById("recommendations").scrollHeight);
-  // console.log(document.getElementById("feedbacks").scrollHeight);
-
   return (
     <div>
       {images.length !== 0 && (
@@ -74,7 +71,7 @@ const Index = () => {
               style={{
                 backgroundColor: "red",
                 fontSize: "1.5rem",
-                color: "black",
+                color: "white",
                 width: "15rem",
               }}
             >
