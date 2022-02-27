@@ -7,6 +7,7 @@ import Recommendations from "../Recommendations/Recommendations";
 import axios from "axios";
 import Footer from "../Footer/Footer";
 import Feedbacks from "../Feedbacks/Feedbacks";
+import { ToastContainer, toast } from "react-toastify";
 
 const Index = () => {
   const [images, setImages] = useState([]);
@@ -197,7 +198,8 @@ const Index = () => {
               <Button
                 style={{
                   fontSize: "1rem",
-                  width: "120%",
+                  width: "150%",
+                  marginLeft: "-2rem",
                   marginTop: "-2.5rem",
                   fontFamily: "Mochiy Pop P One",
                   backgroundColor: "black",
@@ -218,7 +220,9 @@ const Index = () => {
       <div id="feedbacks">
         <Feedbacks />
       </div>
-      {/* <Footer /> */}
+      <div style={{ marginTop: "2rem" }}>
+        <Footer />
+      </div>
     </div>
   );
 };

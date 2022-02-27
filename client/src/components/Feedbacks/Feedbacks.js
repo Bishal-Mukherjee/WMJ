@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import "./Feedbacks.css";
-import { Button } from "@mui/material";
+import { Button, Skeleton } from "@mui/material";
 
 const Feedbacks = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -25,7 +25,21 @@ const Feedbacks = () => {
       <h1 style={{ fontFamily: "Comfortaa" }}>
         What people have to say about us
       </h1>
-      {feedbacks.length === 0 && <div className="loader" />}
+      {feedbacks.length === 0 && (
+        <div
+          style={{
+            marginLeft: "25%",
+            marginRight: "25%",
+            marginBottom: "10rem",
+            marginTop: "5rem",
+          }}
+        >
+          <Skeleton style={{ marginLeft: "10%" }} height="8%" width="80%" />
+          <Skeleton />
+          <Skeleton style={{ marginLeft: "10%" }} height="8%" width="80%" />
+        </div>
+      )}
+
       <div style={{ marginLeft: "5%", marginRight: "5%" }}>
         {feedbacks.length !== 0 && (
           <Fragment>

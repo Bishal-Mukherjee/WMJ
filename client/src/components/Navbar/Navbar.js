@@ -1,41 +1,44 @@
-import React, { useEffect } from "react";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  Container,
-  Button,
-} from "@mui/material";
+import React, { useEffect, Fragment, useState } from "react";
+import { AppBar, Box, Toolbar, Typography, Container } from "@mui/material";
+
 import Sidebar from "./Sidebar";
+import "./Navbar.css";
+import EmailSubmissions from "./EmailSubmisson";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [open, setOpen] = useState(false);
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const pages = ["About Us", "Contact", "Recommendations", "Reviews"];
+  const pages = ["About Us", "Contact Us", "Recommendations", "Reviews"];
 
-  const handlePageMove = (page) => {
-    switch (page) {
-      case "About Us":
-        break;
-      case "Contact":
-        break;
-      case "Recommendations":
-        window.scrollTo(0, 1150);
-        break;
-      case "Reviews":
-        window.scrollTo(0, 1750);
-        break;
-      default:
+  // const handlePageMove = (page) => {
+  //   switch (page) {
+  //     case "About Us":
+  //       break;
+  //     case "Contact":
+  //       break;
+  //     case "Recommendations":
+  //       window.scrollTo(0, 1150);
+  //       break;
+  //     case "Reviews":
+  //       window.scrollTo(0, 1750);
+  //       break;
+  //     default:
+  //   }
+  // };
+
+  const handleSubmissionModal = (type) => {
+    if (type === "Contact Us") {
+      setOpen(true);
     }
   };
 
   return (
-    <div>
+    <Fragment>
       <AppBar style={{ backgroundColor: "black" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -78,7 +81,7 @@ const Navbar = () => {
               {pages.map((page) => (
                 <span
                   key={page}
-                  // onClick={handleCloseNavMenu}
+                  onClick={() => handleSubmissionModal(page)}
                   sx={{ my: 2, color: "white", display: "block" }}
                   style={{
                     marginLeft: "2.2rem",
@@ -87,7 +90,7 @@ const Navbar = () => {
                     fontFamily: "Comfortaa",
                   }}
                   className="navigationButtons"
-                  onClick={() => handlePageMove(page)}
+                  // onClick={() => handlePageMove(page)}
                 >
                   {page}
                 </span>
@@ -96,7 +99,8 @@ const Navbar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-    </div>
+      <EmailSubmissions open={open} setOpen={setOpen} />
+    </Fragment>
   );
 };
 

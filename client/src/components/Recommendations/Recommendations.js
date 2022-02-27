@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Box, Grid } from "@mui/material";
+import React, { Fragment, useEffect, useState } from "react";
+import { Box, Grid, Skeleton } from "@mui/material";
 import axios from "axios";
 import "./Recommendations.css";
 
@@ -27,7 +27,34 @@ const Recommendations = () => {
 
       <div className="catalogLG">
         {images.length === 0 && (
-          <div className="loader" style={{ marginLeft: "48%" }} />
+          <Fragment>
+            <div>
+              <Grid container spacing={1}>
+                {Array.from({ length: 4 }, (i) => (
+                  <Grid item xs={3}>
+                    <Skeleton
+                      variant="rectangular"
+                      style={{
+                        width: "22rem",
+                        height: "25rem",
+                        marginLeft: "0.5rem",
+                      }}
+                    />
+                    <Skeleton
+                      height="8%"
+                      width="80%"
+                      style={{ marginLeft: "0.5rem" }}
+                    />
+                    <Skeleton
+                      height="5%"
+                      width="95%"
+                      style={{ marginLeft: "0.5rem" }}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+          </Fragment>
         )}
         {images.map((i) => (
           <span style={{ marginTop: "-1.5rem" }}>
@@ -83,6 +110,24 @@ const Recommendations = () => {
       </div>
 
       <div className="catalogSM">
+        <Grid container spacing={2}>
+          {images.length === 0 && (
+            <Fragment>
+              {Array.from({ length: 4 }, () => (
+                <Grid item xs={6}>
+                  <Skeleton
+                    variant="rectangular"
+                    style={{ width: "100%" }}
+                    height={150}
+                  />
+                  <Skeleton height="8%" width="100%" />
+                  <Skeleton height="12%" width="100%" />
+                </Grid>
+              ))}
+            </Fragment>
+          )}
+        </Grid>
+
         <Box sx={{ width: "100%" }}>
           <Grid
             container
@@ -90,13 +135,6 @@ const Recommendations = () => {
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             style={{ marginTop: "1rem" }}
           >
-            {images.length === 0 && (
-              <div
-                className="loader"
-                style={{ marginLeft: "42%", marginTop: "1rem" }}
-              />
-            )}
-
             {images.map((i) => (
               <Grid item xs={6} style={{ marginTop: "-1.5rem" }}>
                 <span>

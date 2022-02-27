@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import { Box, List, ListItem, Divider, Button, Drawer } from "@mui/material";
 import { ListItemIcon } from "@mui/material";
 import { Mail, Inbox, MenuRounded } from "@material-ui/icons";
@@ -29,7 +29,7 @@ const Sidebar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Products", "About Us", "Contact", "Recommendations"].map(
+        {["Products", "About Us", "Contact Us", "Recommendations"].map(
           (text, index) => (
             <ListItem
               button
@@ -39,7 +39,7 @@ const Sidebar = () => {
               <ListItemIcon style={{ color: "red" }}>
                 {index % 2 === 0 ? <Inbox /> : <Mail />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text} onClick={() => console.log(text)} />
             </ListItem>
           )
         )}
@@ -48,10 +48,10 @@ const Sidebar = () => {
   );
 
   return (
-    <div>
+    <Fragment>
       <div>
         {["left"].map((anchor) => (
-          <React.Fragment key={anchor}>
+          <Fragment key={anchor}>
             <Button
               style={{ color: "white" }}
               onClick={toggleDrawer(anchor, true)}
@@ -65,10 +65,10 @@ const Sidebar = () => {
             >
               {list(anchor)}
             </Drawer>
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
-    </div>
+    </Fragment>
   );
 };
 
