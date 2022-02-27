@@ -47,6 +47,10 @@ const MyTextField = styled(TextField)({
     "&.Mui-focused fieldset": {
       borderColor: "red",
     },
+    ".css-1x5jdmq": {
+      color: "white",
+      fontFamily: "Comfortaa",
+    },
   },
 });
 
