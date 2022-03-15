@@ -106,14 +106,13 @@ const EmailSubmissions = () => {
               onChange={formik.handleChange}
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email && formik.errors.email}
-              autoFocus
             />
           </Grid>
 
           <Grid item sm={6} xs={12}>
             <MyTextField
               type="number"
-              label="Pin"
+              label="Area pincode"
               style={{
                 width: "100%",
                 textAlign: "center",

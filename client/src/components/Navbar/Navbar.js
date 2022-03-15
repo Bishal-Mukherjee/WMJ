@@ -84,7 +84,7 @@ const Navbar = () => {
               <img
                 src="https://www.dropbox.com/s/4fvzhfrq9vm74sp/logo%20tshirt.png?dl=0&raw=1"
                 alt="wmj_logo"
-                style={{ height: "3.8rem", width: "3.8rem" }}
+                style={{ height: "3rem", width: "3rem" }}
                 className="wmj_logo_sm"
               />
               <span style={{ marginTop: "0.7rem", marginLeft: "0.5rem" }}>
