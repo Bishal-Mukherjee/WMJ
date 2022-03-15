@@ -1,9 +1,23 @@
 import React, { Fragment, useState } from "react";
-import { Box, List, ListItem, Divider, Button, Drawer } from "@mui/material";
+import {
+  Box,
+  List,
+  ListItem,
+  Divider,
+  Button,
+  Drawer,
+  styled,
+} from "@mui/material";
 import { ListItemIcon } from "@mui/material";
 import { Mail, Inbox, MenuRounded } from "@material-ui/icons";
 import { ListItemText } from "@mui/material";
 import "./Sidebar.css";
+
+const MyDrawer = styled(Drawer)({
+  ".css-4t3x6l-MuiPaper-root-MuiDrawer-paper": {
+    backgroundColor: "black",
+  },
+});
 
 const Sidebar = () => {
   const [state, setState] = React.useState({
@@ -34,9 +48,9 @@ const Sidebar = () => {
             <ListItem
               button
               key={text}
-              style={{ color: "red", fontFamily: "Comfortaa" }}
+              style={{ color: "white", fontFamily: "Comfortaa" }}
             >
-              <ListItemIcon style={{ color: "red" }}>
+              <ListItemIcon style={{ color: "white" }}>
                 {index % 2 === 0 ? <Inbox /> : <Mail />}
               </ListItemIcon>
               <ListItemText primary={text} onClick={() => console.log(text)} />
@@ -58,13 +72,13 @@ const Sidebar = () => {
             >
               <MenuRounded />
             </Button>
-            <Drawer
+            <MyDrawer
               anchor={anchor}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
             >
               {list(anchor)}
-            </Drawer>
+            </MyDrawer>
           </Fragment>
         ))}
       </div>

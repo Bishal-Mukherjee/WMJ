@@ -3,3 +3,23 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.wmj_logo_lg {
+  visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+  .wmj_logo_lg {
+    visibility: hidden;
+  }
+}
+
+.wmj_logo_sm {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .wmj_logo_sm {
+    visibility: visible;
+  }
+}

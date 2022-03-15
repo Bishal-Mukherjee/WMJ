@@ -34,9 +34,19 @@ const Feedbacks = () => {
             marginTop: "5rem",
           }}
         >
-          <Skeleton style={{ marginLeft: "10%" }} height="8%" width="80%" />
-          <Skeleton />
-          <Skeleton style={{ marginLeft: "10%" }} height="8%" width="80%" />
+          <Skeleton
+            animation="wave"
+            style={{ marginLeft: "10%" }}
+            height="8%"
+            width="80%"
+          />
+          <Skeleton animation="wave" />
+          <Skeleton
+            animation="wave"
+            style={{ marginLeft: "10%" }}
+            height="8%"
+            width="80%"
+          />
         </div>
       )}
 

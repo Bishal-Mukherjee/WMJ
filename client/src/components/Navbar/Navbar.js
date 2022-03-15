@@ -42,7 +42,13 @@ const Navbar = () => {
       <AppBar style={{ backgroundColor: "black" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
+            <img
+              src="https://www.dropbox.com/s/4fvzhfrq9vm74sp/logo%20tshirt.png?dl=0&raw=1"
+              alt="wmj_logo"
+              style={{ height: "3.8rem", width: "3.8rem" }}
+              className="wmj_logo_lg"
+            />
+            {/* <Typography
               variant="h6"
               noWrap
               component="div"
@@ -55,7 +61,7 @@ const Navbar = () => {
               }}
             >
               WearMyজামা
-            </Typography>
+            </Typography> */}
 
             <Box
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
@@ -70,12 +76,20 @@ const Navbar = () => {
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
               style={{
                 color: "red",
-                fontSize: "1.8rem",
-                fontFamily: "Sofia",
+                fontSize: "1.2rem",
+                fontFamily: "Comfortaa",
                 marginLeft: "-2.5rem",
               }}
             >
-              WearMyজামা
+              <img
+                src="https://www.dropbox.com/s/4fvzhfrq9vm74sp/logo%20tshirt.png?dl=0&raw=1"
+                alt="wmj_logo"
+                style={{ height: "3.8rem", width: "3.8rem" }}
+                className="wmj_logo_sm"
+              />
+              <span style={{ marginTop: "0.7rem", marginLeft: "0.5rem" }}>
+                <b>WearMyজামা</b>
+              </span>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
@@ -99,7 +113,6 @@ const Navbar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <EmailSubmissions open={open} setOpen={setOpen} />
     </Fragment>
   );
 };

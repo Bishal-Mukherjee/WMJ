@@ -1,7 +1,54 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Box, Grid, Skeleton } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Skeleton,
+  TextField,
+  Typography,
+  styled,
+  Button,
+} from "@mui/material";
 import axios from "axios";
 import "./Recommendations.css";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import EmailSubmissions from "../Navbar/EmailSubmisson";
+
+const MyTextField = styled(TextField)({
+  "& .MuiTextField-root": {
+    width: "50ch",
+  },
+  "& label.Mui-focused": {
+    color: "black",
+  },
+  "& label": {
+    color: "black",
+    fontFamily: "Comfortaa",
+  },
+  ".css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input": {
+    color: "white",
+    fontFamily: "Comfortaa",
+    fontSize: "1.3rem",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "red",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "red",
+    },
+    "&:hover fieldset": {
+      borderColor: "red",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "red",
+    },
+    ".css-1x5jdmq": {
+      color: "white",
+      fontFamily: "Comfortaa",
+    },
+  },
+});
 
 const Recommendations = () => {
   const [images, setImages] = useState([]);
@@ -39,16 +86,19 @@ const Recommendations = () => {
                         height: "25rem",
                         marginLeft: "0.5rem",
                       }}
+                      animation="wave"
                     />
                     <Skeleton
                       height="8%"
                       width="80%"
                       style={{ marginLeft: "0.5rem" }}
+                      animation="wave"
                     />
                     <Skeleton
                       height="5%"
                       width="95%"
                       style={{ marginLeft: "0.5rem" }}
+                      animation="wave"
                     />
                   </Grid>
                 ))}
@@ -86,7 +136,12 @@ const Recommendations = () => {
                   {i.text}
                 </span>
                 <br />
-                <b style={{ color: "black", fontFamily: "Comfortaa" }}>
+                <b
+                  style={{
+                    color: "black",
+                    fontFamily: "Comfortaa",
+                  }}
+                >
                   ₹{"  "}
                   {i.revisedPrice}
                 </b>{" "}
@@ -119,9 +174,10 @@ const Recommendations = () => {
                     variant="rectangular"
                     style={{ width: "100%" }}
                     height={150}
+                    animation="wave"
                   />
-                  <Skeleton height="8%" width="100%" />
-                  <Skeleton height="12%" width="100%" />
+                  <Skeleton height="8%" width="100%" animation="wave" />
+                  <Skeleton height="12%" width="100%" animation="wave" />
                 </Grid>
               ))}
             </Fragment>
@@ -177,6 +233,17 @@ const Recommendations = () => {
             ))}
           </Grid>
         </Box>
+      </div>
+      <div style={{ marginTop: "5rem" }}>
+        <Typography style={{ fontFamily: "Comfortaa" }}>
+          Sorry, we are currently out of stocks.
+        </Typography>
+        <Typography style={{ fontFamily: "Comfortaa" }}>
+          Kindly, provide your email and pin. We will reach out to you
+        </Typography>
+        <div style={{ marginTop: "2rem" }}>
+          <EmailSubmissions />
+        </div>
       </div>
     </div>
   );

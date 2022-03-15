@@ -7,7 +7,6 @@ import Recommendations from "../Recommendations/Recommendations";
 import axios from "axios";
 import Footer from "../Footer/Footer";
 import Feedbacks from "../Feedbacks/Feedbacks";
-import { ToastContainer, toast } from "react-toastify";
 
 const Index = () => {
   const [images, setImages] = useState([]);
@@ -47,7 +46,7 @@ const Index = () => {
             src={images[index].imageLink}
           />
           <div className="centered">
-            <h2
+            {/* <h2
               style={{
                 color: "red",
                 fontSize: "2.5rem",
@@ -55,7 +54,7 @@ const Index = () => {
               }}
             >
               WearMyজামা
-            </h2>
+            </h2> */}
             <Typography
               style={{
                 fontSize: "2.1rem",
@@ -93,15 +92,6 @@ const Index = () => {
             src={images[index].imageLink}
           />
           <div className="centered">
-            <h2
-              style={{
-                color: "red",
-                fontSize: "2.5rem",
-                fontFamily: "Sofia",
-              }}
-            >
-              WearMyজামা
-            </h2>
             <Typography
               style={{
                 fontSize: "1.8rem",
@@ -148,8 +138,9 @@ const Index = () => {
               style={{
                 fontSize: "3rem",
                 fontWeight: "900",
-                marginLeft: "-2rem",
+                marginLeft: "-9rem",
                 fontFamily: "Comfortaa",
+                textAlign: "center",
               }}
             >
               Discover Creators and their <span> products </span>
@@ -157,10 +148,11 @@ const Index = () => {
             <Button
               style={{
                 backgroundColor: "black",
-                color: "red",
-                marginLeft: "5rem",
+                color: "white",
+                marginLeft: "2rem",
                 fontSize: "1rem",
-                width: "30rem",
+                width: "35rem",
+                height: "3rem",
               }}
             >
               Explore
@@ -172,7 +164,7 @@ const Index = () => {
         className="first_bannerSM"
         style={{
           height: "20rem",
-          marginTop: "2rem",
+          marginTop: "2.5rem",
           margin: "1rem",
         }}
       >
@@ -217,7 +209,7 @@ const Index = () => {
         <Recommendations />
       </div>
 
-      <div id="feedbacks">
+      <div style={{ marginTop: "5rem" }} id="feedbacks">
         <Feedbacks />
       </div>
       <div style={{ marginTop: "2rem" }}>

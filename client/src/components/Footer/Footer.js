@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import "./Footer.css";
 import EmailSubmission from "../Navbar/EmailSubmisson";
@@ -18,22 +18,9 @@ const Footer = () => {
             alignItems: "center",
           }}
         >
-          <Button
-            style={{
-              backgroundColor: "red",
-              fontSize: "1.1rem",
-              color: "white",
-              width: "12rem",
-              marginTop: "1rem",
-            }}
-            onClick={() => handleModal()}
-            className="contact_us"
-          >
-            Contact us
-          </Button>
+          <Typography style={{ color: "white" }}>I'm Footer</Typography>
         </div>
       </footer>
-      <EmailSubmission open={open} setOpen={setOpen} />
     </Fragment>
   );
 };
